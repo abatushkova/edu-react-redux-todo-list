@@ -1,0 +1,23 @@
+@use '../../scss/abstracts' as *;
+
+.todo-list {
+  width: 100%;
+  max-width: 60rem;
+  margin-bottom: 5rem;
+
+  &__button {
+    display: block;
+    height: 4rem;
+    padding: 0 1.6rem;
+    margin-top: 3.6rem;
+    margin-left: auto;
+    border-bottom: 1px solid currentColor;
+    color: $color-button-delete;
+    font: 500 1.6rem/2.4rem a;
+    font-family: inherit;
+    &:hover {
+      color: $white;
+      background-color: $color-button-delete;
+    }
+  }
+}
