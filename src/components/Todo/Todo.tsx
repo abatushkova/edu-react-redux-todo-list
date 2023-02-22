@@ -1,29 +1,40 @@
 import React, { ChangeEvent, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { toggleTodo, deleteTodo, changeTodo } from '../../reducers/todosSlice';
+import type { Todo } from '../../reducers/todosSlice';
 import './Todo.scss';
 
-interface IPropsModel {
-  // todo: TodoType;
+interface IProps {
+  todo: Todo;
 }
 
-export const Todo = () => {
+export const TodoItem = ({ todo }: IProps) => {
   const [isEditing, setIsEditing] = useState(false);
+  const dispatch = useDispatch();
   let todoContent;
 
   const handleToggle = () => {
-  };
-
-  const handleEditClick = () => {
-    setIsEditing(true);
+    dispatch(
+      toggleTodo(todo.id)
+    );
   };
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch(
+      changeTodo({
+        ...todo,
+        text: e.target.value.trim(),
+      })
+    );
   };
 
-  const handleSaveClick = () => {
-    setIsEditing(false);
-  };
+  const handleEditClick = () => setIsEditing(true);
+  const handleSaveClick = () => setIsEditing(false);
 
   const handleDeleteClick = () => {
+    dispatch(
+      deleteTodo(todo.id)
+    );
   };
 
   if (isEditing) {
@@ -31,7 +42,7 @@ export const Todo = () => {
       <>
         <input
           type="text"
-          // value={todo.text}
+          value={todo.text}
           onChange={handleInputChange}
           className="todo__input" />
         <button
@@ -49,7 +60,7 @@ export const Todo = () => {
   } else {
     todoContent = (
       <>
-      {/* <p className="todo__text">{todo.text}</p> */}
+      <p className="todo__text">{todo.text}</p>
       <button
         type="button"
         onClick={handleEditClick}
@@ -64,7 +75,7 @@ export const Todo = () => {
     )
   }
   return (
-    <li className={`todo ${"todo.completed" ? "is-completed" : ""}`}>
+    <li className={`todo ${todo.completed ? "is-completed" : ""}`}>
       <button
         type="button"
         onClick={handleToggle}

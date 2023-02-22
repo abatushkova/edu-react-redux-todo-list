@@ -1,23 +1,36 @@
 import React from 'react';
-import { Todo } from '../Todo/Todo';
+import { useSelector, useDispatch, TypedUseSelectorHook } from 'react-redux';
+import { TodoItem } from '../Todo/Todo';
+import { clearTodos, selectTodos } from '../../reducers/todosSlice';
+import { RootState } from '../../app/store';
 import './TodoList.scss';
 
+const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
+
 export const TodoList = () => {
+  const dispatch = useDispatch();
+  const todos = useTypedSelector(selectTodos);
+
   const handleCLearAllClick = () => {
+    dispatch(
+      clearTodos({
+        list: []
+      })
+    );
   };
 
   return (
     <ul className="todo-list">
-      {/* {tasks.map(task => (
-        <Task key={task.id} task={task} />
+      {todos.map(todo => (
+        <TodoItem key={todo.id} todo={todo} />
       ))}
-      {tasks.length > 0 && (
+      {todos.length > 0 && (
         <button
           type="button"
-          className="task-list__button"
+          className="todo-list__button"
           onClick={handleCLearAllClick}
         >Clear All</button>
-      )} */}
+      )}
     </ul>
   );
 }
