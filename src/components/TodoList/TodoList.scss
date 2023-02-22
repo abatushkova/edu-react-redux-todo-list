@@ -15,6 +15,7 @@
     color: $color-button-delete;
     font: 500 1.6rem/2.4rem a;
     font-family: inherit;
+    &:focus-visible,
     &:hover {
       color: $white;
       background-color: $color-button-delete;

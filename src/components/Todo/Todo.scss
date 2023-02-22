@@ -38,6 +38,7 @@
     border: 1px solid currentColor;
     border-radius: 50%;
     font-size: 1.4rem;
+    &:focus-visible,
     &:hover {
       color: $white;
     }
@@ -48,6 +49,7 @@
     margin-right: 1.6rem;
     color: $white;
     border-color: $primary;
+    &:focus-visible,
     &:hover,
     .todo.is-completed & {
       background-color: $primary;
@@ -57,6 +59,7 @@
   &__button--edit,
   &__button--save {
     color: $color-button-edit;
+    &:focus-visible,
     &:hover {
       background-color: $color-button-edit;
     }
@@ -64,6 +67,7 @@
 
   &__button--delete {
     color: $color-button-delete;
+    &:focus-visible,
     &:hover {
       background-color: $color-button-delete;
     }
