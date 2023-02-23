@@ -1,6 +1,8 @@
 # ToDo List with Redux
 Educational project with functionality: add new tasks, edit task, delete, mark as completed. Also you can filter tasks by type: all, active, completed.
 
+[Live Demo](https://abatushkova.github.io/edu-react-redux-todo-list/)
+
 ## Built with
 - Create React App
 - Redux-Toolkit
