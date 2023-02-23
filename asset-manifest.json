@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/edu-react-redux-todo-list/static/css/main.1562179b.css",
+    "main.js": "/edu-react-redux-todo-list/static/js/main.e86a791c.js",
+    "index.html": "/edu-react-redux-todo-list/index.html",
+    "main.1562179b.css.map": "/edu-react-redux-todo-list/static/css/main.1562179b.css.map",
+    "main.e86a791c.js.map": "/edu-react-redux-todo-list/static/js/main.e86a791c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1562179b.css",
+    "static/js/main.e86a791c.js"
+  ]
+}
