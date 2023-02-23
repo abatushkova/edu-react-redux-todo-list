@@ -1,4 +1,5 @@
 import React from 'react';
+import './Filter.scss';
 
 interface IProps {
   filter: string;
