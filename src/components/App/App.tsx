@@ -7,7 +7,7 @@ import './App.scss';
 const App = () => {
   return (
     <div className="hero">
-      <h1 className="headline">Do ToDo</h1>
+      <h1 className="headline hero__title">Do ToDo</h1>
       <AddTodo />
       <FilterList />
       <TodoList />

@@ -23,7 +23,7 @@ export const TodoItem = ({ todo }: IProps) => {
     dispatch(
       changeTodo({
         ...todo,
-        text: e.target.value.trim(),
+        text: e.target.value,
       })
     );
   };
