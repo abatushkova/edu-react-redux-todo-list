@@ -1,7 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { toggleTodo, deleteTodo, changeTodo } from '../../reducers/todosSlice';
-import type { Todo } from '../../reducers/todosSlice';
+import { toggleTodo, deleteTodo, changeTodo, Todo } from '../../reducers/todosSlice';
 import './Todo.scss';
 
 interface IProps {

@@ -9,12 +9,12 @@ export const AddTodo = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!text.length) return;
+    if (!text.trim()) return;
 
     dispatch(
       addTodo({
         id: Date.now(),
-        text,
+        text: text.trim(),
         completed: false,
       })
     );
